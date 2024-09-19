@@ -6,10 +6,14 @@ class Medicine
     char trade_name[30];
     char generic_name[30];
 
-    double unit_price = 0;
-    double discount = 5;
+    double unit_price;
+    double discount;
 
 public:
+    Medicine(){
+       unit_price=0; 
+       discount = 5;
+    }
     void assignName(char name[], char genericName[])
     {
         strcpy(trade_name, name);

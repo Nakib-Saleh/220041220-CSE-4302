@@ -3,6 +3,8 @@ using namespace std;
 
 class RationalNumber
 {
+    private:
+
     int _numerator, _denominator;
 
 public:
@@ -50,7 +52,7 @@ int main()
     RationalNumber r1;
     r1.assign(3, 0);
 
-    r1.assign(3, 2);
+    r1.assign(5, 2);
     cout << r1.convert() << endl;
 
     r1.assign(0, 2);

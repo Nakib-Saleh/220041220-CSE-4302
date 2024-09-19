@@ -4,10 +4,14 @@ using namespace std;
 class Counter
 {
 private:
-    int count = 0;
-    int incrementAmount = 0;
+    int count;
+    int incrementAmount;
 
 public:
+    Counter(){
+        count=0;
+        incrementAmount=0;
+    }
     void setIncrementStep(int n)
     {
         incrementAmount = n;
