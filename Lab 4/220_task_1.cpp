@@ -29,7 +29,7 @@ public:
        return cos(getAngle()); 
     }
     float calculateTangent(){
-        if(getAngle()==90){
+        if(curr_angle==90){
             cout<<"Undefined Value of tangent"<<endl;
         }
         else{
