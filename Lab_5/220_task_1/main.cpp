@@ -30,7 +30,7 @@ string generateRandomString(int length) {
     const char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     int alphabetSize = sizeof(alphabet) - 1; // Exclude null character
 
-    srand(static_cast<unsigned int>(time(0))); // Seed the random number generator
+    srand(static_cast<unsigned int>(time(0)) + rand());
 
     for (int i = 0; i < length; ++i) {
         randomString += alphabet[rand() % alphabetSize];
@@ -42,20 +42,11 @@ string generateRandomString(int length) {
 
 int generateID(){
     int id=0;
-    id+=randomInt(20,24);
-    id*100000;
-
-    id+=randomInt(1,6);
-    id*10;
-
-    id+=randomInt(1,2);
-    id*10;
-
-    id+=randomInt(1,3);
-    id*100;
-
+    id+=randomInt(20,24)*10000000;
+    id+=randomInt(1,6)*10000;
+    id+=randomInt(1,2)*1000;
+    id+=randomInt(1,3)*100;
     id+=randomInt(1,70);
-
     return id;
 }
 
@@ -70,8 +61,6 @@ string randname(int n){
     return name;
 
 }
-
-
 
 void EditInformationByKeyboard(Student s){
     string str;
@@ -102,7 +91,7 @@ void EditInformationByKeyboard(Student s){
     s.setadmission_year(year); 
 }
 
-void generateInformaiotnRandom(Student s){
+void generateInformaiotnRandom(Student &s){
     int n=4;
     while(n--){
         s.setmarks(randomFloat(0,100));
@@ -116,4 +105,10 @@ void generateInformaiotnRandom(Student s){
 
 
 int main(){
+    Student s1;
+    generateInformaiotnRandom(s1);
+    cout<<s1.getid()<<endl;
+    cout<<s1.getname()<<endl;
+    cout<<s1.getadmission_year()<<endl;
+    cout<<s1.getaddress()<<endl;
 }
